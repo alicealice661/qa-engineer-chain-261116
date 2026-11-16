@@ -1,0 +1,41 @@
+[
+  {
+    "id": "dev-1",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "这个 /d/xxxx/ 分享链接里的日志帮我拉下来。",
+    "checks": [
+      "按列目录 → 建打包任务 → 轮询 → 下载 的顺序做",
+      "大文件走单文件直链 + Range，不硬等整包"
+    ]
+  },
+  {
+    "id": "dev-2",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "下载时报 429 了。",
+    "checks": [
+      "按指数退避重试，批次间加间隔",
+      "拆小批次，不并发猛拉"
+    ]
+  },
+  {
+    "id": "holdout-1",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "我有账号密码，能不能直接用你这个脚本？",
+    "checks": [
+      "说明本技能只解决匿名分享链接",
+      "有账号应走官方客户端或 API"
+    ]
+  },
+  {
+    "id": "holdout-2",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "我只想先看里面一个 docx 的内容。",
+    "checks": [
+      "用单文件直链取单个文件，不必整包打包"
+    ]
+  }
+]

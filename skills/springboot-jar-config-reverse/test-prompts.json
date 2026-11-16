@@ -1,0 +1,43 @@
+[
+  {
+    "id": "dev-1",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "这个 jar 部署起来报 Could not resolve placeholder，到底缺什么配置？",
+    "checks": [
+      "扫字节码常量池里的 ${...} 占位符",
+      "按「几个服务需要它」拆共享配置与服务专属配置",
+      "产出配置项清单 + Nacos 模板"
+    ]
+  },
+  {
+    "id": "dev-2",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "工程里有 mapper XML，还需要什么配置？",
+    "checks": [
+      "反推 mybatis-plus.typeAliasesPackage 这类绑定式配置",
+      "说明依据（有 mapper XML 就必须有）"
+    ]
+  },
+  {
+    "id": "holdout-1",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "某个配置项猜不出来，随便填个默认值行吗？",
+    "checks": [
+      "不猜，用 javap 看语义或从部署现场挖真实值",
+      "候选配置必须运行态验证后才写进交付文档"
+    ]
+  },
+  {
+    "id": "holdout-2",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "Nacos 界面里这个命名空间是空的。",
+    "checks": [
+      "先怀疑查错实例或配置在别的部署里",
+      "给出现场挖掘路径（overlay2 / 挂载目录 / 启动参数）"
+    ]
+  }
+]

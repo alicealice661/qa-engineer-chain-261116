@@ -1,0 +1,43 @@
+[
+  {
+    "id": "dev-1",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "这几个 Seafile 链接是三天的内网资源、慢 SQL 和日志，出个多日趋势。",
+    "checks": [
+      "逐日解析成 days/<YYYYMMDD>.json",
+      "趋势以首日为基线，并在报告里标注基线日",
+      "产出汇总 md 与禅道导入 CSV（只含未修复项，UTF-8 BOM）"
+    ]
+  },
+  {
+    "id": "dev-2",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "慢 SQL 里有一行写的是 2.95M，脚本解析报错。",
+    "checks": [
+      "识别为字符串量级写法，解析时要展开成数值",
+      "不跳过该行，改完复跑核对行数一致"
+    ]
+  },
+  {
+    "id": "holdout-1",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "把这些资源问题提到禅道。",
+    "checks": [
+      "只导未修复项，已修复/已关闭不进清单",
+      "CSV 列与禅道导入模板一致（11 列，utf-8-sig）"
+    ]
+  },
+  {
+    "id": "holdout-2",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "链接里有个目录带 .log 后缀，下载一直 404。",
+    "checks": [
+      "改用单文件 JSON API，不用整包 zip-task",
+      "429 按退避重试，批次拆小"
+    ]
+  }
+]

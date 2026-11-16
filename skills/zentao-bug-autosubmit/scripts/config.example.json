@@ -1,0 +1,34 @@
+{
+  "_说明": "复制成 config.json 后按现场填。secret 字段不要提交到代码库。",
+  "base_url": "http://<禅道地址>:<端口>",
+  "account": "<登录账号>",
+  "password": "<登录密码>",
+
+  "product_id": 4,
+  "project_id": 210,
+  "module_id": 0,
+  "build_value": "trunk",
+  "build_text": "主干",
+  "assigned_to": "yangxiaowei",
+  "assigned_text": "杨小伟",
+  "feedback_by": "杨昌华",
+  "bug_type": "codeerror",
+
+  "end": "attack",
+  "attack_default_level": "中危",
+
+  "_devices说明": "标题设备名/系统名的按端兜底值。清单里有「设备名」列时以清单为准；这里留空则该端不加设备名。标题形如「测试APK端——出入库秤 xxx」「测试PC端——智慧后勤系统 xxx」",
+  "devices": {
+    "PC": "智慧后勤系统",
+    "APK": "",
+    "IGW": ""
+  },
+
+  "evidence_dir": "C:/path/to/evidence",
+  "default_csv": "C:/path/to/缺陷清单.csv",
+
+  "headless": true,
+  "interval": 5,
+  "use_proxy": false,
+  "dup_pages": 4
+}

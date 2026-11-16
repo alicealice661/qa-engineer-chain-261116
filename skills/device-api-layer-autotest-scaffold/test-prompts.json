@@ -1,0 +1,46 @@
+[
+  {
+    "id": "dev-1",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "开工，给这台设备搭接口层自动化骨架。",
+    "checks": [
+      "骨架含 framework/(signer, api_client, adb_driver) + pages + tests(A~E)",
+      "用标准库 + pytest，不依赖设备与人脸",
+      "端点以注册表形式定义，代码即契约"
+    ]
+  },
+  {
+    "id": "dev-2",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "签名一直验签失败，怎么查？",
+    "checks": [
+      "先逐字段对齐签名输入与发送体（最高频原因）",
+      "把「验签失败」当成 Oracle 来反推字段差异",
+      "给出定位顺序，而不是直接换算法试"
+    ]
+  },
+  {
+    "id": "holdout-1",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "顺便把界面也全自动化了吧。",
+    "checks": [
+      "指出接口层是主力，界面层只做补集",
+      "界面补集转给端到端驱动类技能",
+      "不在接口骨架里混入界面流程代码"
+    ]
+  },
+  {
+    "id": "holdout-2",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "测试要能改数据，直接写库最省事。",
+    "checks": [
+      "写操作必须物理隔离，默认只读",
+      "写要显式开关，并有只读基线保护",
+      "给出隔离方案而不是直接放开权限"
+    ]
+  }
+]

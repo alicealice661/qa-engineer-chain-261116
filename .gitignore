@@ -1,0 +1,28 @@
+# 系统与编辑器垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# 运行产物与本地配置
+runs/
+output/
+*.log
+*.tmp
+.env
+*.local.json
+creds*.json
+accounts.json
+
+# 个人机器路径（安装后生成）
+.installed

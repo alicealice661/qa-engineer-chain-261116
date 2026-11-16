@@ -1,0 +1,227 @@
+{
+  "name": "qa-engineer-chain",
+  "version": "1.0.0",
+  "built": "2026-11-16",
+  "summary": "从本机 21 个技能中用达尔文 E0 筛出 16 个测试工程师技能，串成 7 段链路 + 6 个支撑技能",
+  "source_pool": "~/.workbuddy/skills（用户级，21 个）",
+  "selection": {
+    "total": 21,
+    "included": 16,
+    "excluded": 5
+  },
+  "chain_stages": [
+    "① 立项",
+    "② 基准",
+    "③ 接口打通",
+    "④ 界面跑通",
+    "⑤ 执行取证",
+    "⑥ 缺陷闭环",
+    "⑦ 交付移交",
+    "支撑"
+  ],
+  "skills": [
+    {
+      "name": "device-auto-test-plan-authoring",
+      "stage": "① 立项",
+      "role": "main",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 14,
+      "deps": []
+    },
+    {
+      "name": "device-acceptance-spec-scan",
+      "stage": "② 基准",
+      "role": "main",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 11,
+      "deps": []
+    },
+    {
+      "name": "apk-network-pentest-recon",
+      "stage": "③ 接口打通",
+      "role": "main",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 11,
+      "deps": [
+        "androguard>=4.1",
+        "gmssl"
+      ]
+    },
+    {
+      "name": "device-api-layer-autotest-scaffold",
+      "stage": "③ 接口打通",
+      "role": "main",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 12,
+      "deps": []
+    },
+    {
+      "name": "selfdrawn-ui-template-locate",
+      "stage": "④ 界面跑通",
+      "role": "on-demand",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 11,
+      "deps": []
+    },
+    {
+      "name": "device-e2e-flow-driver",
+      "stage": "④ 界面跑通",
+      "role": "main",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 11,
+      "deps": []
+    },
+    {
+      "name": "android-adb-test-monitor",
+      "stage": "⑤ 执行取证",
+      "role": "main",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 11,
+      "deps": []
+    },
+    {
+      "name": "zentao-bug-autosubmit",
+      "stage": "⑥ 缺陷闭环",
+      "role": "main",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 9,
+      "deps": [
+        "playwright"
+      ]
+    },
+    {
+      "name": "zentao-cli",
+      "stage": "⑥ 缺陷闭环",
+      "role": "main",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 8,
+      "deps": []
+    },
+    {
+      "name": "device-pack-ai-handoff",
+      "stage": "⑦ 交付移交",
+      "role": "main",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 8,
+      "deps": []
+    },
+    {
+      "name": "android-component-entry-verify",
+      "stage": "支撑",
+      "role": "support",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 9,
+      "deps": [
+        "androguard>=4.1"
+      ]
+    },
+    {
+      "name": "network-only-device-recon",
+      "stage": "支撑",
+      "role": "support",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 8,
+      "deps": []
+    },
+    {
+      "name": "server-resource-trend-analyzer",
+      "stage": "支撑",
+      "role": "support",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 9,
+      "deps": []
+    },
+    {
+      "name": "springboot-jar-config-reverse",
+      "stage": "支撑",
+      "role": "support",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 9,
+      "deps": []
+    },
+    {
+      "name": "staged-script-remote-diagnosis",
+      "stage": "支撑",
+      "role": "support",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 9,
+      "deps": []
+    },
+    {
+      "name": "seafile-anon-share-download",
+      "stage": "支撑",
+      "role": "support",
+      "has_routing_section": true,
+      "test_prompts": 4,
+      "checks": 7,
+      "deps": []
+    }
+  ],
+  "excluded": [
+    {
+      "name": "darwin-skill",
+      "reason": "元工具，评估 skill 本身，与测试动作无交接物"
+    },
+    {
+      "name": "remotion-ai-video-pipeline",
+      "reason": "视频创作，与测试域无关"
+    },
+    {
+      "name": "workbuddy-data-recovery",
+      "reason": "WorkBuddy 平台自身数据维护"
+    },
+    {
+      "name": "device-manual-docx-generation",
+      "reason": "面向终端用户的操作手册，与内置 docx 能力抢路由"
+    },
+    {
+      "name": "python-docx-chinese-manual",
+      "reason": "通用中文 docx 生成，同上"
+    }
+  ],
+  "evidence": {
+    "e0": "passed (0 errors)",
+    "e1": "diagnostic only, not scored",
+    "e2": "not run",
+    "e3": "not run"
+  },
+  "score": null,
+  "score_note": "未跑 E2，按达尔文规矩不给 9 维总分；缺实测不可比",
+  "test_total": {
+    "cases": 64,
+    "checks": 157
+  },
+  "known_wontfix": [
+    {
+      "skill": "device-e2e-flow-driver",
+      "warning": "正文 1006 行 > 500"
+    },
+    {
+      "skill": "android-adb-test-monitor",
+      "warning": "正文 788 行 > 500"
+    },
+    {
+      "skill": "apk-network-pentest-recon",
+      "warning": "正文 778 行 > 500"
+    },
+    {
+      "skill": "springboot-jar-config-reverse",
+      "warning": "175/183 行 /home/<name>/ 误报（容器路径）"
+    }
+  ]
+}

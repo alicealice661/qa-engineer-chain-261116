@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dev-1",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "查一下我禅道里的待办。",
+    "checks": [
+      "用 CLI 的查询入口取数，不靠网页截图",
+      "给出结构化汇总（按产品/优先级）"
+    ]
+  },
+  {
+    "id": "dev-2",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "把这个 bug 关掉。",
+    "checks": [
+      "先查单确认状态与权限，再执行状态流转",
+      "改完回读核实，不只看命令返回码"
+    ]
+  },
+  {
+    "id": "holdout-1",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "批量建 20 个 bug 单。",
+    "checks": [
+      "说明 CLI 不适合批量建单，转提单类技能",
+      "给出正确的分工"
+    ]
+  },
+  {
+    "id": "holdout-2",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "zentao-cli 装不上，报错一堆。",
+    "checks": [
+      "给出版本确认与安装/配置排查路径",
+      "先定位是认证问题还是安装问题"
+    ]
+  }
+]

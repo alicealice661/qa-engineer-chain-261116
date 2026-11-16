@@ -1,0 +1,9 @@
+# qa-engineer-chain 依赖
+# 多数技能只用 Python 标准库；下面三个是硬依赖，按需安装。
+
+# APK 静态逆向（apk-network-pentest-recon / android-component-entry-verify）
+androguard>=4.1.0
+gmssl>=3.2.2          # 国密 SM2/SM3/SM4，签名算法还原时会用到
+
+# 禅道提单（zentao-bug-autosubmit）：驱动本机 Edge，无需 API token
+playwright>=1.40.0

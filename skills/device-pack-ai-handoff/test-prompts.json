@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dev-1",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "这个测试工程给同事能不能直接用？",
+    "checks": [
+      "先做文档引用与实际文件的缺口核对",
+      "六步：依赖声明、路径自适应、剥本机路径、给AI执行说明、异路径实测",
+      "给出结论要有实测支撑"
+    ]
+  },
+  {
+    "id": "dev-2",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "README 里写了我的 C:/Users 路径，要改吗？",
+    "checks": [
+      "必须改：AI 读文档会照抄命令",
+      "给出替换规则，并提醒 heredoc 里反斜杠会被吞"
+    ]
+  },
+  {
+    "id": "holdout-1",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "原地跑通了，可以交付了吧？",
+    "checks": [
+      "不行，必须换完全不同的路径再跑一次",
+      "给出异路径实测的具体做法与期望输出"
+    ]
+  },
+  {
+    "id": "holdout-2",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "《给AI的执行说明》里写什么？",
+    "checks": [
+      "六节：阅读顺序 / AI 能做 / AI 做不了 / 换环境改哪几处 / 执行红线 / 报错速查"
+    ]
+  }
+]

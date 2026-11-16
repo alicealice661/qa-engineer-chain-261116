@@ -1,0 +1,43 @@
+[
+  {
+    "id": "dev-1",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "这个设置页到底有没有入口？是不是死代码？",
+    "checks": [
+      "三线证据齐全：manifest 属性 + dex 调用链 + 实机验证",
+      "结论用四级定性表述",
+      "缺一线时只说疑似，不下「确认无入口」"
+    ]
+  },
+  {
+    "id": "dev-2",
+    "split": "dev",
+    "source": "doc",
+    "prompt": "这个 SharedPreferences key 是用户能配的，还是程序写进去的？",
+    "checks": [
+      "走配置项真实身份这条线判定",
+      "给出判定依据（写入点、默认值、界面可写性）",
+      "不下无证据结论"
+    ]
+  },
+  {
+    "id": "holdout-1",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "manifest 里没有 exported=true，那就是没入口吧？",
+    "checks": [
+      "指出单一属性不足以下结论（同进程/同 UID 仍可拉起）",
+      "补 dex 调用链与实机验证"
+    ]
+  },
+  {
+    "id": "holdout-2",
+    "split": "holdout",
+    "source": "doc",
+    "prompt": "帮我把这个 APK 的接口都逆出来。",
+    "checks": [
+      "说明不属于本技能，转 APK 网络侦察/逆向类技能"
+    ]
+  }
+]
